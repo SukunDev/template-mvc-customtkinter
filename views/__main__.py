@@ -1,6 +1,6 @@
 import customtkinter
 from typing import TypedDict
-from config import APP_NAME, APP_WIDTH, APP_HEIGHT
+from config import APP_NAME, APP_WIDTH, APP_HEIGHT, APP_MIN_WIDTH, APP_MIN_HEIGHT
 from .home_view import HomeView
 from .signin_view import SignInView
 from .signup_view import SignUpView
@@ -14,11 +14,11 @@ class View(customtkinter.CTk):
     def __init__(self):
         super().__init__()
 
-        self.geometry(f'{APP_WIDTH}x{APP_HEIGHT}')
         self.title(APP_NAME)
+        self.geometry(f'{APP_WIDTH}x{APP_HEIGHT}')
+        self.minsize(width=APP_MIN_WIDTH, height=APP_MIN_HEIGHT)
         self.grid_columnconfigure(0, weight=1)
         self.grid_rowconfigure(0, weight=1)
-        self.resizable(width=False, height=False)
 
         self.frames: Frames = {}  # type: ignore
 

@@ -15,7 +15,13 @@ SQLALCHEMY_TRACK_MODIFICATIONS = False
 APP_NAME="Example App"
 
 # Application Width
-APP_WIDTH=925
+APP_WIDTH=500
+
+# Application Minimal Width
+APP_MIN_WIDTH=400
 
 # Application Height
-APP_HEIGHT=500
+APP_HEIGHT=300
+
+# Application Minimal Height
+APP_MIN_HEIGHT=250
