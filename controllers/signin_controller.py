@@ -13,7 +13,7 @@ class SignInController:
         self._bind()
         self.model.user.add_event_listener("user_logged", self.auth_state_listener)
 
-    def _bind(self):
+    def _bind(self) -> None:
         """Binds controller functions with respective buttons in the view"""
         self.frame.signup_btn.configure(command=self.signup_btn)
         self.frame.signin_btn.configure(command=self.signin_btn)
@@ -22,10 +22,10 @@ class SignInController:
         if data.is_logged:
             self.view.switch('home_view')
 
-    def signup_btn(self):
+    def signup_btn(self) -> None:
         self.view.switch("signup_view")
 
-    def signin_btn(self):
+    def signin_btn(self) -> None:
         username = self.frame.username_input.get()
         password = self.frame.password_input.get()
         if len(username) < 1:

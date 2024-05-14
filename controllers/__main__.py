@@ -14,6 +14,6 @@ class Controller:
         self.signup_controller = SignUpController(model, view)
         self.home_controller = HomeController(model, view)
 
-    def start_app(self):
+    def start_app(self) -> None:
         self.view.switch("signin_view")
         self.view.start_mainloop()

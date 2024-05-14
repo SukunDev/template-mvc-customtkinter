@@ -12,7 +12,7 @@ class SignUpController:
         self._bind()
         self.model.user.add_event_listener("user_created", self.auth_state_listener)
 
-    def _bind(self):
+    def _bind(self) -> None:
         self.frame.signin_btn.configure(command=self.signin_btn)
         self.frame.signup_btn.configure(command=self.signup_btn)
 
@@ -20,10 +20,10 @@ class SignUpController:
         show_message("info", "Success to create user")
         self.view.switch('signin_view')
 
-    def signin_btn(self):
+    def signin_btn(self) -> None:
         self.view.switch("signin_view")
 
-    def signup_btn(self):
+    def signup_btn(self) -> None:
         fullname =  self.frame.fullname_input.get()
         username = self.frame.username_input.get()
         password = self.frame.password_input.get()

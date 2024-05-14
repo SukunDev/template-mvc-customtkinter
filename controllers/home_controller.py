@@ -22,5 +22,5 @@ class HomeController:
         else:
             self.view.switch('signin_view')
     
-    def signout_btn(self):
+    def signout_btn(self) -> None:
         self.model.user.logout()
