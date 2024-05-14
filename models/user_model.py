@@ -65,7 +65,7 @@ class UserModel(ObservableModel):
             show_message("warning", "Username not found, please Sign Up before Sign In")
             return
         if user.password != encode_md5(password):
-            show_message("warning", "Credential not match")
+            show_message("error", "Credential not match")
             return
         self.is_logged = True
         self.current_user = user
